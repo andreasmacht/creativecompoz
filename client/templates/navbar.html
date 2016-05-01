@@ -1,0 +1,45 @@
+<template name="navbar">
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- navbar collapsed -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- navbar uncollapsed -->
+        <a class="navbar-brand" href="{{pathFor route='home'}}">
+          CreativeCompoz
+        </a>
+        <!-- <ul class="nav navbar-nav">
+        	<li>
+        		<a href="{{pathFor route='tryout'}}">Try out</a>
+        	</li>	
+        </ul> -->
+        <ul class="nav navbar-nav">
+          	{{#if currentUser}}
+    	      	<li>
+    	      		<a href="#" class="logout">Logout</a>
+    	      	</li>
+          	{{else}}
+    	      	<li>
+    	      		<a href="{{pathFor route='login'}}">
+    	      			Log in 
+    	      		</a>
+          		</li> 
+          		
+          		<li>
+    	      		<a href="{{pathFor route='register'}}">Register</a>
+    	      	</li>
+          	{{/if}}
+          </ul>
+        
+      </div> <!-- /navbar-header -->
+    </div> <!-- /container-fluid -->
+  </div><!-- /container-->
+</nav>
+</template>

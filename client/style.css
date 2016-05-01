@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+
+/* CLASSES */
+.top-margin {
+	margin-top: 50px;
+}
+
+
+/*ID */
+#tryeditor {
+	margin: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 400px;
+	width: 95%;
+	border: 1px solid blue;
+}
