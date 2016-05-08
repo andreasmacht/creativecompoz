@@ -84,6 +84,9 @@ tracker@1.0.9
 twbs:bootstrap@3.3.6
 ui@1.0.8
 underscore@1.0.4
+universe:audio-recorder@1.0.0
 url@1.0.5
+vazco:universe-collection@1.2.2
+vazco:universe-utilities@1.0.9
 webapp@1.2.3
 webapp-hashing@1.0.5

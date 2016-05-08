@@ -4,7 +4,11 @@
 .top-margin {
 	margin-top: 50px;
 }
-
+.margin {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
 
 /*ID */
 #tryeditor {
