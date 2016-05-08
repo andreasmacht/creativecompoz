@@ -53,6 +53,7 @@ sketch1 = function(s){
       soundFile.play(); // play the result!
       s.saveSound(soundFile, 'mySound.wav'); // save file
       state++;
+      
     }
   }
 }

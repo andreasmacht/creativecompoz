@@ -39,12 +39,7 @@ if (Meteor.isClient) {
     
 	})
 
-	Template.trytasklist.onRendered(function(){
-		console.log("entering onRendered trytasklist");
-		tryInitNetworkView();
-	})
-
-	/*Template.tryaudiolist.helpers({
+		/*Template.tryaudiolist.helpers({
 		sketch:function(){
 			console.log("rendering sketch2");
 			p5sketch = new p5(sketch, "sketch");
@@ -56,18 +51,31 @@ if (Meteor.isClient) {
 /////////////////////////////////////
 /////Helpers for the Tryout section
 /////////////////////////////////////
+
+	Template.tryTodoItem.helpers({
+    	'checked':function(){
+    		var isCompleted = this.completed;
+
+    		if(isCompleted){
+    			return "checked";
+    		}
+    		else {
+    			return "";
+    		}
+    	}
+    });
+
 	Template.trytasklist.helpers({
-		showTryTask:function(){
+		'task':function(){
 			//look if there is a trytask
-			console.log("what tasks");
-			console.log(TryTasks.find({sort: {createdOn:-1}}));
-			return TryTasks.find({sort: {createdOn:-1}});
+			console.log("")
+			return TryTasks.find({createdBy: "anonymous"}, {sort: {createdAt:-1}});
 
 		}
 	});
 
 	Template.tryeditor.helpers({
-		docid:function(){
+		'docid':function(){
 			//look if there is a docid in TryDocuments collection
 			var tryDoc = TryDocuments.findOne();
 			if(tryDoc){//there is a document
@@ -166,7 +174,7 @@ function tryInitNetworkView(){
     visjsobj.destroy();
   }
   // find all tasks from the TryTasks collection
-  var trytasks = TryTasks.find({});
+  var trytasks = TryTasks.find();
   var nodes = new Array();
   var ind = 0;
   // iterate the tasks, converting each task into 
@@ -176,6 +184,8 @@ function tryInitNetworkView(){
      var label = "ind: "+ind;
      if (trytasks.name != undefined){// we have a name
           label = trytasks.name + " - " + " Tryout";
+          console.log("the task name:" + label);
+
       } 
       
       // create the node and store it to the nodes array

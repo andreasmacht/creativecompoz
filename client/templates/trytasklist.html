@@ -3,6 +3,11 @@
 			<input class="margin" type="text" placeholder="Create a new task" name="newTryTask">
 		</form>
 
-		<p class="margin">showing the latest task: {{showTryTask}}</p> 
+		<p class="margin">showing the latest tasks: </p> 
+		<ul>
+			{{#each task}}
+				<li>{{name}}</li>
+			{{/each}}
+		</ul>
 		<div id="tryvisjs" class="margin">	</div>
 </template>

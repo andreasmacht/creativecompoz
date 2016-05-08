@@ -1,9 +1,24 @@
 <template name="login">
 	<h2>Login</h2>
-	<form class="login">
-		<p>Email: <input type="email" name="email" required></p>
-		<p>Password: <input type="password" name="password" required></p>
-		<p><input type="submit" value="Login" class="btn btn-success"></p>
+	<form class="login form-horizontal" role="form">
+		<div class="form-group">
+			<label for="email" class="control-label col-sm-2">Email address: </label>
+			<div class="col-sm-6">
+				<input type="email" class="form-control" name="email" required>
+			</div><!-- /col-sm-10-->
+		</div><!-- /form group-->
+		
+		<div class="form-group">
+			<label for="password" class="control-label col-sm-2">Password: </label>
+			<div class="col-sm-6">
+				<input type="password" class="form-control" name="password" required>
+			</div><!-- /col-sm-10-->
+		</div><!-- /form group -->
 
+		<div class="form-group">	
+			<div class="col-sm-offset-2 col-sm-6">
+				<input type="submit" value="Login" class="btn btn-success">
+			</div><!-- /offset-->
+		</div><!--/form group -->
 	</form>
 </template>
