@@ -1,20 +1,35 @@
 <template name="home">
-	<h2>CreativeCompoz - creative writing for creative people - in real time</h2>
-
+<h1 align="center">WELCOME - DASHBOARD</h1>
+<hr>
 	<div class ="container">
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<p>I want to ... </p>
+				<!-- refer to myproject.html here-->
+				{{> myprojects}}
+				<!-- I want to test the audio-->
+				{{> audiotest}}
 			</div>
-		</div> <!-- / row-->
+		</div><!-- / row-->
+		<hr>
+
+
+
 		<div class="row">
-			<div class="col-md-6 col-xs-6">
-				<a href="{{pathFor route='tryout'}}">Try the plattform</a>
-			</div>
-			<div class="col-md-6 col-xs-6">
-				<a href="{{pathFor route='register'}}">Create my own projects</a>
+	
+			<div class="col-md-offset-1 col-md-4 col-xs-12 feature-left">
+				<span class="glyphicon glyphicon-new-window"></span>
+				<h2>I WANT TO </h2>
+				<p><a href="{{pathFor route='newproject'}}"><h3>Create a new project</h3></a></p>
+				<P>Create a new project and invite your friends to join you. Give it a creative category. </P>
+			</div><!-- /panel -->
+			
+			<div class="col-md-offset-1 col-md-4 col-xs-12 feature-right">
+				<span class="glyphicon glyphicon-search"></span>
+				<h2>I WANT TO</h2>
+				<p><a href="{{pathFor route='searchproject'}}"><h3>Join a project I like</h3></a></p>
+				<P>Search among all existing project and join it! </P>
 			</div>
 		</div><!-- /row2-->
 	</div><!-- /container -->
-	
+
 </template>

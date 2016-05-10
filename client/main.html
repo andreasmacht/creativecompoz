@@ -1,4 +1,4 @@
-<template name="main">
+	<template name="main">
   	
 	<div class="container top-margin">
 		{{> navbar}}
@@ -6,14 +6,25 @@
 
 		{{> yield}}
 
-	
-
-		<div class="panel">
-			<div class="panel-footer">
-				<p>Copyright &copy; Andreas Macht 2016</p>
-			</div>
-		</div><!-- /panel -->
 	</div><!-- / container-->
+		<footer class="footer">
+			<div class="panel">
+				<div class="panel-footer">
+					<nav class="navbar navbar-default" role="navigation">
+						
+							<ul class="nav navbar-nav navbar-left white">
+								<li><a href="{{pathFor route='about'}}" id="about">About</a>
+									
+								</li>
+								<li>Copyright &copy; Andreas Macht 2016</li>
+							</ul>
+						
+					</nav>
+					
+				</div>
+			</div><!-- /panel -->
+		</footer>
+	
 
 
 </template>

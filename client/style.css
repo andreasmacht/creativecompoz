@@ -1,6 +1,26 @@
 /* CSS declarations go here */
 
+/* TAGS GO HERE*/
+h1 {
+	font-family: 'Poiret One', cursive;
+	font-weight: 400;
+}
+h2 {
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	
+}
+
 /* CLASSES */
+.white{
+	color: white;
+}
+.panel-footer{
+	text-align: right;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	background-color: #993366;
+}
 .top-margin {
 	margin-top: 50px;
 }
@@ -9,7 +29,56 @@
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
-
+.navbar {
+	background-color: #993366;
+}
+.jumbotron {
+	background-image: url(/images/jumbo_creative_coffee.jpg);
+	opacity: 0.5;
+	background-size: 100%;
+	
+}	
+.jumbotron h1{
+	margin-top: 200px;
+	margin-left: 150px;
+	color: #333300;
+	font-weight: bold;
+}	
+.jumbotron p{
+	margin-top: 25px;
+	margin-left: 150px;
+	color: #333300;
+	font-weight: bold;
+}	
+.well {
+	margin-top: 20px;
+}
+.feature-left{
+	margin-top: 50px;
+	margin-bottom: 50px;	
+	/*border: 1px dotted black;*/
+	text-align: center;
+	/*border-right: 1px dotted gray;*/
+}
+.feature-right{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	/*border-left: 1px dotted gray;*/
+	/*border: 1px dotted black;*/
+	text-align: center;
+}
+.glyphicon-edit{
+	font-size: 2.5em;
+}
+.glyphicon-plus-sign {
+	font-size: 2.5em;
+}
+.glyphicon-new-window{
+	font-size: 2.5em;
+}
+.glyphicon-search{
+	font-size: 2.5em;
+}
 /*ID */
 #tryeditor {
 	margin: 10px;
@@ -18,4 +87,24 @@
 	height: 400px;
 	width: 95%;
 	border: 1px solid blue;
+}
+#brand {
+	font-family: 'Poiret One', cursive;
+	font-weight: 200;
+	color: white;
+}
+#login {
+	color: white;
+}
+#register {
+	color: white;
+}
+#logout {
+	color: white;
+}
+#about {
+	color: white;
+}
+#hiUser {
+	color: white;
 }

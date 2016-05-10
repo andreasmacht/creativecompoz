@@ -6,8 +6,8 @@ Router.configure({
 });
 
 Router.route('/', {
-  name: 'home',
-  template: 'home'
+  name: 'start',
+  template: 'start'
 });
 
 Router.route('/register', {
@@ -26,6 +26,22 @@ Router.route('/tryAudio', {
   name: 'tryAudio',
   template: 'tryAudio'
 });
+Router.route('/about', {
+  name: 'about',
+  template: 'about'
+});
+Router.route('/home', {
+  name: 'home',
+  template: 'home'
+});
+Router.route('/newproject', {
+	name: 'newproject',
+	template: 'newproject'
+});
+Router.route('/searchproject', {
+	name: 'searchproject',
+	template: 'searchproject'
+});
 
 
 if (Meteor.isClient) {
@@ -37,7 +53,114 @@ if (Meteor.isClient) {
     	console.log("entering onRendered tryaudiolist");
     	var myp5 = new p5(sketch1, "s");
     
-	})
+	});
+	/*********************************Login Temlplate **********************************************/
+	Template.login.onRendered(function(){
+		var validator = $('.login').validate({
+            submitHandler: function(event){
+                var email = $('[name=email]').val();
+                var password = $('[name=password]').val();
+                Meteor.loginWithPassword(email, password, function(error){
+                    if(error){
+                        if(error.reason == "User not found"){
+                            validator.showErrors({
+                                email: "That email doesn't belong to a registered user."   
+                            });
+                        }
+                        if(error.reason == "Incorrect password"){
+                            validator.showErrors({
+                                password: "You entered an incorrect password."    
+                            });
+                        }
+                    }
+                    else{
+                        var currentRoute = Router.current().route.getName();
+                        if(currentRoute == "login"){
+                            Router.go("home");
+                        }
+                    }
+                });
+            }, 
+            rules:  {
+                email: {
+                    required: true,
+                    email: true
+
+                },
+                password: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+                email: {
+                    required: "You must enter a valid email address!",
+                    email:"Enter a valid email address"
+                },
+                password: {
+                    required: "You forgot to enter your password!",
+                    password: "Seems you typed it wrong",
+                    minlength: "Too short, has to be min 6 characters!"
+                }
+            }
+        });
+	});
+
+	/*********************************Register Temlplate **********************************************/
+
+     Template.register.onRendered(function(){
+        var validator = $('.register').validate({
+            submitHandler: function(){
+            		var username = $('[name=name]').val();
+                    var email = $('[name=email]').val();
+                    var password = $('[name=password]').val();
+                    //use accounts-password CreateUser function
+                    Accounts.createUser({
+                    	username: username,
+                        email: email, 
+                        password: password
+                    }, function(error){
+                        if(error){
+                            if(error.reason == "Email already exists."){
+                                validator.showErrors({
+                                    email: "That email already belongs to a registered user."   
+                                });
+                            }
+                        }
+                        else{
+                        //forward the user to the home page
+                            Router.go('home');
+
+                        }
+                    });
+            },
+            rules: {
+            	username: {
+            		required: true
+            	},
+                email: {
+                    required: true,
+                    email: true
+
+                },
+                password: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+            	username: "People may want to know you! Add a name!",
+                email: {
+                    required: "You must enter a valid email address!",
+                    email:"Enter a valid email address"
+                },
+                password: {
+                    required: "Hey, don't forget to enter a password!",
+                    minlength: "Please be serious about your password, at least 6 characters!"
+                }
+            }
+        });
+    });
 
 		/*Template.tryaudiolist.helpers({
 		sketch:function(){
@@ -47,6 +170,7 @@ if (Meteor.isClient) {
 		}
 		
 	})*/
+
 
 /////////////////////////////////////
 /////Helpers for the Tryout section
@@ -87,6 +211,8 @@ if (Meteor.isClient) {
 		}
 	});
 
+
+
 ////////////////////////////////////
 /////Events for the Tryout section
 ////////////////////////////////////
@@ -121,6 +247,35 @@ if (Meteor.isClient) {
 			}
 		}
 	})*/
+	Template.audiotest.events({
+		'click .js-record':function(event){
+			event.preventDefault();
+			tryAudioRecorder.startRecording();
+		},
+		'click .js-stoprecord':function(event){
+			event.preventDefault();
+			tryAudioRecorder.stopRecording();
+		},
+		'click .js-play':function(event){
+			event.preventDefault();
+			var doc = tryAudioRecorder.findOne();
+			console.log("my audio doc:" + doc);
+
+			if(tryAudioRecorder.ready()){
+				doc.play();
+			}
+		}
+	});
+
+	Template.navbar.events({
+        'click .logout':function(event){
+            event.preventDefault();
+            Meteor.logout();
+            //logged out users to be redirected to the start page again
+            Router.go('start');
+        }
+
+    });
 
 	Template.trytasklist.events({
 		"submit form":function(event){
