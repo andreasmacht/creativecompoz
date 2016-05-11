@@ -4,5 +4,7 @@ if (Meteor.isServer) {
     if(!TryDocuments.findOne()){ //there is no document yet
     	TryDocuments.insert({title:"try out"});
     }
+    console.log("Inital document created. ");
+    console.log(TryDocuments.findOne());
   });
 }

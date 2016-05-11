@@ -1,49 +1,3 @@
-///////////
-////Routing
-///////////
-Router.configure({
-  layoutTemplate: 'main'
-});
-
-Router.route('/', {
-  name: 'start',
-  template: 'start'
-});
-
-Router.route('/register', {
-  name: 'register',
-  template: 'register'
-});
-Router.route('/login', {
-  name: 'login',
-  template: 'login'
-});
-Router.route('/tryout', {
-  name: 'tryout',
-  template: 'tryout'
-});
-Router.route('/tryAudio', {
-  name: 'tryAudio',
-  template: 'tryAudio'
-});
-Router.route('/about', {
-  name: 'about',
-  template: 'about'
-});
-Router.route('/home', {
-  name: 'home',
-  template: 'home'
-});
-Router.route('/newproject', {
-	name: 'newproject',
-	template: 'newproject'
-});
-Router.route('/searchproject', {
-	name: 'searchproject',
-	template: 'searchproject'
-});
-
-
 if (Meteor.isClient) {
 
 ///////////////////////////////////////////////
@@ -176,19 +130,6 @@ if (Meteor.isClient) {
 /////Helpers for the Tryout section
 /////////////////////////////////////
 
-	Template.tryTodoItem.helpers({
-    	'checked':function(){
-    		var isCompleted = this.completed;
-
-    		if(isCompleted){
-    			return "checked";
-    		}
-    		else {
-    			return "";
-    		}
-    	}
-    });
-
 	Template.trytasklist.helpers({
 		'task':function(){
 			//look if there is a trytask
@@ -248,15 +189,15 @@ if (Meteor.isClient) {
 		}
 	})*/
 	Template.audiotest.events({
-		'click .js-record':function(event){
+		"click .js-record":function(event){
 			event.preventDefault();
 			tryAudioRecorder.startRecording();
 		},
-		'click .js-stoprecord':function(event){
+		"click .js-stoprecord":function(event){
 			event.preventDefault();
 			tryAudioRecorder.stopRecording();
 		},
-		'click .js-play':function(event){
+		"click .js-play":function(event){
 			event.preventDefault();
 			var doc = tryAudioRecorder.findOne();
 			console.log("my audio doc:" + doc);
@@ -267,15 +208,7 @@ if (Meteor.isClient) {
 		}
 	});
 
-	Template.navbar.events({
-        'click .logout':function(event){
-            event.preventDefault();
-            Meteor.logout();
-            //logged out users to be redirected to the start page again
-            Router.go('start');
-        }
 
-    });
 
 	Template.trytasklist.events({
 		"submit form":function(event){

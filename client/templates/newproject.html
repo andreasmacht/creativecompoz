@@ -1,4 +1,46 @@
 <template name="newproject">
 
 <h1>newproject template placeholder</h1>
+<div class="panel">
+	<div class="panel-header">
+		<h3>Create your project</h3>
+		<div class="panel-body">
+			<form class="form-horizontal js-newproject">
+				<div class="form-group">
+					<label for="pname" class="control-label col-sm-2">Project name: </label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="pname" required>
+					</div><!-- /col-sm-10-->
+				</div><!-- /form group-->
+				<div class="form-group">
+					<label for="pdescription" class="control-label col-sm-2">Describe your project: </label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="pdescription" required>
+					</div><!-- /col-sm-10-->
+				</div><!-- /form group-->
+				<div class="form-group">
+					<label for="pcategory" class="control-label col-sm-2">Categorize your project: </label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="pcategory" required>
+					</div><!-- /col-sm-10-->
+				</div><!-- /form group-->
+				<div class="form-group">
+					<label for="pisPrivate" class="control-label col-sm-2">You want to keep it private? </label>
+					<div class="col-sm-6">
+						<input type="checkbox" name="isPrivate">
+					</div><!-- /col-sm-10-->
+				</div><!-- /form group-->
+					<div class="form-group">	
+						<div class="col-sm-offset-2 col-sm-6">
+							<input type="submit" value="Submit" class="btn btn-info js-newproject">
+						</div><!-- /offset-->
+					</div><!--/form group -->
+			</form>
+		</div> <!-- panel-body-->
+
+	</div><!-- /panel-header -->
+
+</div><!-- /panel -->
+
+
 </template>

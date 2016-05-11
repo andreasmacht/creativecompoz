@@ -1,4 +1,4 @@
-<template name="navbar">
+<template name="navigation">
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="container-fluid">
@@ -28,7 +28,9 @@
         <ul class="nav navbar-nav navbar-right">
           	{{#if currentUser}}
               <li><a href="#" id="hiUser">Hi, {{currentUser.username}}, have fun!</a></li>
-    	      	<li><a href="{{pathFor route='start'}}" id="logout" class="logout">Logout</a></li>
+    	      	<li><a href="{{pathFor route='start'}}" id="backtostart">To START</a></li>
+              <li><a href="{{pathFor route='home'}}" id="dashboard">To DASHBOARD</a></li>
+              <li><button class="btn btn-danger js-logout" type="button">Logout</button></li>
           	{{else}}
     	      	<li><a href="{{pathFor route='login'}}" id="login">Log in</a></li> 
           		

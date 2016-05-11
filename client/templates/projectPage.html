@@ -1,0 +1,40 @@
+<template name="projectPage">
+	<h1>YOUR PROJECT DASHBOARD</h1>
+	<!-- HERE: AN EDITABLE PROJECT TITLE-->
+	<div class="row">
+		<div class="col-md-6 col-xs-12">
+			<p><a href="{{pathFor route='newproject'}}"><span class="glyphicon glyphicon-plus"></span> Create another project.</a></p>
+		</div>
+		<div class="col-md-6 col-xs-12">
+			{{> projectList}}
+		</div>
+	</div><!-- /row1 -->
+	<div class="row">
+		<h3>Placeholder EditingUsers</h3>
+
+	</div><!-- /row2 -->
+
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			{{> lastActivities}}
+		</div>
+	</div><!-- /row3-->
+	
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<h3>Your Project:</h3>
+			<input type="text" value="{{pname}}" name="currentProject"> [<a href="#" class="js-delete-project">Delete</a>]
+		</div>
+	</div><!-- /row4-->
+
+</template>
+
+
+
+<template name="todoItem">
+	<li class="{{checked}}">
+		<input type="checkbox" {{checked}}>
+		<input type="text" value="{{name}}" name="todoItem"> [<a href="#" class="js-delete-todo">Delete</a>]
+	</li>
+
+</template>

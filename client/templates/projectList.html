@@ -1,0 +1,22 @@
+<template name="projectList">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Project name</th>
+				<th>Project description</th>
+				<th>Project category</th>
+				<th>Created At</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each project}}
+			<tr>
+				<td>{{pname}} [<a href="#" class="js-delete-project">Delete</a>] </td>
+				<td>{{pdescription}} </td>
+				<td>{{pcategory}} </td>
+				<td>{{createdAt}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
