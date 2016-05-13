@@ -20,5 +20,24 @@ Template.projectList.events({
 			})
 		}
 		
+	},
+	"click .js-project":function(event){
+		event.preventDefault();
+		var user = Meteor.userId();
+		var projectId = this._id;
+		console.log("what project is there? ");
+		console.log(projectId);
+
+		var filter = {
+			_id:projectId,
+			owner:user
+		} 
+		
+
+		if(filter){
+			return Projects.find(filter);	
+		}
+		Router.go('projectPage');
+		
 	}
 });

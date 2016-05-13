@@ -1,5 +1,5 @@
 <template name="projectPage">
-	<h1>YOUR PROJECT DASHBOARD</h1>
+	<h1>YOUR PROJECT PAGE</h1>
 	<!-- HERE: AN EDITABLE PROJECT TITLE-->
 	<div class="row">
 		<div class="col-md-6 col-xs-12">
@@ -23,12 +23,26 @@
 	<div class="row">
 		<div class="col-md-12 col-xs-12">
 			<h3>Your Project:</h3>
-			<input type="text" value="{{pname}}" name="currentProject"> [<a href="#" class="js-delete-project">Delete</a>]
+			<input type="text" value="{{pname}}" name="currentProject">
 		</div>
 	</div><!-- /row4-->
+	<hr>
+	<div class="row">
+			<div class="col-md-6 col-xs-12">
+				{{> editor}}
+			</div>			
+			<div class="col-md-6 col-xs-12">
+				<!-- TODO-->
+				{{> tasklist}}
+				<hr>
+				<!--TODO-->
+				{{> audiolist}}
+			</div>
+	
+	</div> <!-- /row -->
 
 </template>
-
+<!-- 
 
 
 <template name="todoItem">
@@ -37,4 +51,4 @@
 		<input type="text" value="{{name}}" name="todoItem"> [<a href="#" class="js-delete-todo">Delete</a>]
 	</li>
 
-</template>
+</template> -->

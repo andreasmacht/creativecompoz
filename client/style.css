@@ -11,6 +11,24 @@ h2 {
 	
 }
 
+[name=currentProject]{
+	border:none;
+	font-family: "Arial";
+	font-size: 100%;
+	padding:0.15em;
+}
+
+[name=currentProject]:hover{
+	background-color: #f9f9f9;
+	cursor: pointer;
+}
+
+[name=currentProject]:focus{
+	background-color: #f9f9f9;
+	cursor: default;
+	outline: none;
+}
+
 /* CLASSES */
 .white{
 	color: white;
@@ -81,6 +99,14 @@ h2 {
 }
 /*ID */
 #tryeditor {
+	margin: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 400px;
+	width: 95%;
+	border: 1px solid blue;
+}
+#editor {
 	margin: 10px;
 	padding-left: 10px;
 	padding-top: 10px;

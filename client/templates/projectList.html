@@ -11,7 +11,7 @@
 		<tbody>
 			{{#each project}}
 			<tr>
-				<td>{{pname}} [<a href="#" class="js-delete-project">Delete</a>] </td>
+				<td><a href="/projects/{{_id}}">{{pname}}</a> [<a href="#" class="js-delete-project">Delete</a>] </td>
 				<td>{{pdescription}} </td>
 				<td>{{pcategory}} </td>
 				<td>{{createdAt}}</td>
