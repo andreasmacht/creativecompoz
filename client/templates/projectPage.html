@@ -3,7 +3,7 @@
 	<!-- HERE: AN EDITABLE PROJECT TITLE-->
 	<div class="row">
 		<div class="col-md-6 col-xs-12">
-			<p><a href="{{pathFor route='newproject'}}"><span class="glyphicon glyphicon-plus"></span> Create another project.</a></p>
+			<p><a href="{{pathFor route='newproject'}}"><span class="glyphicon glyphicon-plus"></span><h2> Create another project.</h2></a></p>
 		</div>
 		<div class="col-md-6 col-xs-12">
 			{{> projectList}}
@@ -28,7 +28,7 @@
 	</div><!-- /row4-->
 	<hr>
 	<div class="row">
-			<div class="col-md-6 col-xs-12">
+			<div class="col-md-12 col-xs-12">
 				<!-- show the list of all documents that belong to the project first
 				Then show the editor after one document has been clicked on
 				this requires a {{yield "editDocs"}}
@@ -59,6 +59,13 @@
 							</div><!-- /form group-->
 							
 							<div class="form-group">
+								<label for="documentCategory" class="control-label col-sm-4">Category: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="documentCategory" required>
+								</div><!-- /col-sm-10-->
+							</div><!-- /form group-->
+
+							<div class="form-group">
 								<label for="documentAbout" class="control-label col-sm-4">About the document: </label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" name="documentAbout" required>
@@ -84,6 +91,7 @@
 							<tr>
 								<th>Document Title</th>
 								<th>About this document</th>
+								<th>Category</th>
 								<th>Created At</th>
 								<th>Delete?</th>
 								<!-- later editingusers must be added-->
@@ -94,6 +102,7 @@
 							<tr>
 								<td><a href="/document/{{_id}}">{{docTitle}}</a></td>
 								<td>{{docAbout}}</td>
+								<td>{{docCategory}}</td>
 								<td>{{createdAt}}</td>
 								<td> [<a href="#" class="js-delete-document">Delete</a>]</td>
 							
@@ -107,13 +116,7 @@
 				</div><!--/end of panel-->
 				{{> yield "editor"}}
 			</div>			
-			<div class="col-md-6 col-xs-12">
-				<!-- TODO-->
-				{{> tasklist}}
-				<hr>
-				<!--TODO-->
-				{{> audiolist}}
-			</div>
+			
 	
 	</div> <!-- /row -->
 

@@ -12,10 +12,12 @@ h2 {
 }
 
 [name=currentProject]{
-	border:none;
+	border:1px dotted gray;
 	font-family: "Arial";
-	font-size: 100%;
+	font-size: 1.8em;
 	padding:0.15em;
+	width: 400px;
+	border-radius: 5px;
 }
 
 [name=currentProject]:hover{
@@ -24,6 +26,26 @@ h2 {
 }
 
 [name=currentProject]:focus{
+	background-color: #f9f9f9;
+	cursor: default;
+	outline: none;
+}
+
+[name=currentDocument]{
+	border:1px dotted gray;
+	font-family: "Arial";
+	font-size: 1.8em;
+	padding:0.15em;
+	width: 400px;
+	border-radius: 5px;
+}
+
+[name=currentDocument]:hover{
+	background-color: #f9f9f9;
+	cursor: pointer;
+}
+
+[name=currentDocument]:focus{
 	background-color: #f9f9f9;
 	cursor: default;
 	outline: none;
@@ -58,7 +80,7 @@ h2 {
 }
 .jumbotron {
 	background-image: url(/images/jumbo_creative_coffee.jpg);
-	opacity: 0.5;
+	opacity: 0.75;
 	background-size: 100%;
 	
 }	
@@ -103,6 +125,9 @@ h2 {
 .glyphicon-search{
 	font-size: 2.5em;
 }
+.glyphicon-plus{
+	font-size: 2.5em;
+}
 /*ID */
 #tryeditor {
 	margin: 10px;
@@ -124,6 +149,7 @@ h2 {
 	font-family: 'Poiret One', cursive;
 	font-weight: 200;
 	color: white;
+	
 }
 #login {
 	color: white;

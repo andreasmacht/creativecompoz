@@ -43,12 +43,13 @@ Template.projectPage.events({
     	var currentProject = this._id;
     	var docTitle = $('[name=documentTitle]').val();
     	var docAbout = $('[name=documentAbout]').val();
+        var docCat = $('[name=documentCategory]').val();
 
     	if(!user){return};//no user, give up
 
     	if (!currentProject) {return}; //no project, give up
     	//creating a document now
-    	Meteor.call("createDoc", docTitle, docAbout, user, currentProject, function(err, res){
+    	Meteor.call("createDoc", docTitle, docAbout, docCat, user, currentProject, function(err, res){
     		if(err){
     			console.log(err.reason);
     		}

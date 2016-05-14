@@ -78,8 +78,10 @@ Router.route('/document/:_id', {
     console.log("you hit /document " + this.params._id);
     var currentDocument = this.params._id;
     var currentUser = Meteor.userId();
-    return Documents.findOne({_id:currentDocument, owner:currentUser});
     this.render("editor", {to:"editor"});
     Session.set("documentid", this.params._id);
+    console.log("what is the documentid?");
+    console.log(Session.get("documentid"));
+    return Documents.findOne({_id:currentDocument, owner:currentUser});
   }
 })

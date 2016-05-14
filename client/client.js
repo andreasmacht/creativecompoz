@@ -12,10 +12,9 @@ if (Meteor.isClient) {
 
     Template.tryaudiolist.events({
         "click .js-reloadAudio": function(){
-            $('[name=initial]').hide();
             var i=0;
-            new p5(sketch1, "sketch");
-            
+            new p5(sketch1, "sketch1");
+            $('[name=initial]').hide();
             
         }
     });

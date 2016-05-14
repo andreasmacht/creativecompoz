@@ -39,7 +39,7 @@ Template.editor.events({
 // helper to make sure a doc is available
 function setupCurrentDocument(){
   var doc;
-  if (!Session.get("docid")){// no doc id set yet
+  if (!Session.get("documentid")){// no doc id set yet
     doc = Documents.findOne();
     if (doc){
       Session.set("documentid", doc._id);
