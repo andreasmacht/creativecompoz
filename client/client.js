@@ -6,9 +6,19 @@ if (Meteor.isClient) {
 	Template.tryaudiolist.onRendered(function() {
     	console.log("entering onRendered tryaudiolist");
     	
-            new p5(sketch2, "sketch");
+            new p5(sketch1, "sketch");
     
 	});
+
+    Template.tryaudiolist.events({
+        "click .js-reloadAudio": function(){
+            $('[name=initial]').hide();
+            var i=0;
+            new p5(sketch1, "sketch");
+            
+            
+        }
+    });
 	/*********************************Login Temlplate **********************************************/
 	Template.login.onRendered(function(){
 		var validator = $('.login').validate({

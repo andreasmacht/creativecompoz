@@ -6,9 +6,13 @@ sketch1 = function(s){
   var mic, recorder, soundFile;
 
   var state = 0; // mousePress will increment from Record, to Stop, to Play
+  var canvas;
 
   s.setup = function() {
-    s.createCanvas(300, 200);
+    
+    canvas = s.createCanvas(300, 200);;
+   
+
     s.background(200);
     s.fill(0);
     s.text('Enable mic and click the mouse to begin recording', 20, 20);
@@ -27,12 +31,15 @@ sketch1 = function(s){
 
     // create an empty sound file that we will use to playback the recording
     soundFile = new p5.SoundFile();
+
+     // Assign a callback function to canvas.mousePressed event
+    canvas.mousePressed(startRecording);
   }
 
-  s.mousePressed = function() {
+  var startRecording = function() {
     // use the '.enabled' boolean to make sure user enabled the mic (otherwise we'd record silence)
     //warum rendered mousepressed im body und nicht in div canvas???
-    console.log("mousePressed ENTERED");
+    console.log("startRecording ENTERED");
     if (state === 0 && mic.enabled) {
 
       // Tell recorder to record to a p5.SoundFile which we will use for playback
