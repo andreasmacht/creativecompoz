@@ -1,4 +1,13 @@
 <template name="editor">
-	<h3>Editor:</h3>
-	{{> sharejsText docid=docid id="editor"}}
+	<br>
+	<a href="/projects/:_id"><span class="glyphicon glyphicon-home"></span> BACK TO PROJECTS PAGE</a>
+	<BR>
+	<hr>
+	<h4>Document's title:</h4>
+	<input type="text" value="{{docTitle}}" name="currentDocument">
+
+	<h4>Content goes here:</h4>
+	
+	<!-- editor shall be shown only if there is a document-->
+		{{> sharejsText docid=docid id="editor"}}
 </template>

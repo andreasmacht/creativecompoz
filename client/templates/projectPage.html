@@ -29,7 +29,83 @@
 	<hr>
 	<div class="row">
 			<div class="col-md-6 col-xs-12">
-				{{> editor}}
+				<!-- show the list of all documents that belong to the project first
+				Then show the editor after one document has been clicked on
+				this requires a {{yield "editDocs"}}
+				in routes.js: this.render "documents to "editDocs"
+							this.render "editor to "editDocs" -->
+				<!-- Create a new document with a modal -->
+				<!-- Trigger the modal with a button -->
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create a new document</button>
+
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+
+				    <!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Create a new document in your project</h4>
+				      </div>
+				      <div class="modal-body">
+				        <p>Enter your document properties here.</p>
+				        <form class="login form-horizontal" role="form">
+							<div class="form-group">
+								<label for="documentTitle" class="control-label col-sm-4">Document title: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="documentTitle" required>
+								</div><!-- /col-sm-10-->
+							</div><!-- /form group-->
+							
+							<div class="form-group">
+								<label for="documentAbout" class="control-label col-sm-4">About the document: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="documentAbout" required>
+								</div><!-- /col-sm-10-->
+							</div><!-- /form group -->
+						</form>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default js-newDoc" data-dismiss="modal">Submit</button>
+				      </div>
+				    </div>
+
+				  </div><!--/modal-dialog-->
+				</div><!--/modal-->
+				<br>
+				<hr>
+				<!-- now show all available docs for this project in a panel with table-->
+				<div class="panel panel-default">
+				  <div class="panel-heading">Here are your project's documents</div>
+				  <div class="panel-body">
+				  	<table class="table">
+				  		<thead>
+							<tr>
+								<th>Document Title</th>
+								<th>About this document</th>
+								<th>Created At</th>
+								<th>Delete?</th>
+								<!-- later editingusers must be added-->
+							</tr>	
+						</thead>
+						<tbody>
+							{{#each document}}
+							<tr>
+								<td><a href="/document/{{_id}}">{{docTitle}}</a></td>
+								<td>{{docAbout}}</td>
+								<td>{{createdAt}}</td>
+								<td> [<a href="#" class="js-delete-document">Delete</a>]</td>
+							
+							</tr>
+							{{/each}}
+						</tbody>
+
+				  	</table>
+
+				  </div><!--/panel-body-->
+				</div><!--/end of panel-->
+				{{> yield "editor"}}
 			</div>			
 			<div class="col-md-6 col-xs-12">
 				<!-- TODO-->

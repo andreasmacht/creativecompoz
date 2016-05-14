@@ -28,13 +28,17 @@
         <ul class="nav navbar-nav navbar-right">
           	{{#if currentUser}}
               <li><a href="#" id="hiUser">Hi, {{currentUser.username}}, have fun!</a></li>
-    	      	<li><a href="{{pathFor route='start'}}" id="backtostart">To START</a></li>
-              <li><a href="{{pathFor route='home'}}" id="dashboard">To DASHBOARD</a></li>
-              <li><button class="btn btn-danger js-logout" type="button">Logout</button></li>
+    	      	<li><a href="{{pathFor route='start'}}" id="backtostart"><span class="glyphicon glyphicon-home">
+              </span> To START</a></li>
+              <li><a href="{{pathFor route='home'}}" id="dashboard"><span class="glyphicon glyphicon-dashboard"></span> To DASHBOARD</a></li>
+              <li><button class="btn btn-danger js-logout" type="button"><span class="
+glyphicon glyphicon-heart-empty"></span> Logout</button></li>
           	{{else}}
-    	      	<li><a href="{{pathFor route='login'}}" id="login">Log in</a></li> 
+    	      	<li><a href="{{pathFor route='login'}}" id="login"><span class="
+glyphicon glyphicon-user"></span> Log in</a></li> 
           		
-          		<li><a href="{{pathFor route='register'}}" id="register">Register</a></li>
+          		<li><a href="{{pathFor route='register'}}" id="register"><span class="
+glyphicon glyphicon-pencil"></span>Register</a></li>
           	{{/if}}
           </ul>
       </div> <!-- / navbar uncollapsed-->  

@@ -50,6 +50,12 @@ h2 {
 .navbar {
 	background-color: #993366;
 }
+.modal-header{
+	background-color: #df9fbf;
+}
+.modal-footer{
+	background-color: #e9e9e5;
+}
 .jumbotron {
 	background-image: url(/images/jumbo_creative_coffee.jpg);
 	opacity: 0.5;

@@ -42,6 +42,7 @@ Router.route('/searchproject', {
 	name: 'searchproject',
 	template: 'searchproject'
 });
+
 //Route for individual project page 
 Router.route('/projects/:_id', {
 
@@ -66,4 +67,19 @@ Router.route('/projects/:_id', {
     }
   }
    
+  
 });
+
+Router.route('/document/:_id', {
+  
+  name: 'editor',
+  template: 'editor',
+  data:function(){
+    console.log("you hit /document " + this.params._id);
+    var currentDocument = this.params._id;
+    var currentUser = Meteor.userId();
+    return Documents.findOne({_id:currentDocument, owner:currentUser});
+    this.render("editor", {to:"editor"});
+    Session.set("documentid", this.params._id);
+  }
+})

@@ -5,7 +5,8 @@ if (Meteor.isClient) {
 ///////////////////////////////////////////////
 	Template.tryaudiolist.onRendered(function() {
     	console.log("entering onRendered tryaudiolist");
-    	var myp5 = new p5(sketch1, "s");
+    	
+            new p5(sketch2, "sketch");
     
 	});
 	/*********************************Login Temlplate **********************************************/

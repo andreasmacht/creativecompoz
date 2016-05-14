@@ -1,22 +1,29 @@
 <template name="projectList">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Project name</th>
-				<th>Project description</th>
-				<th>Project category</th>
-				<th>Created At</th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each project}}
-			<tr>
-				<td><a href="/projects/{{_id}}">{{pname}}</a> [<a href="#" class="js-delete-project">Delete</a>] </td>
-				<td>{{pdescription}} </td>
-				<td>{{pcategory}} </td>
-				<td>{{createdAt}}</td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<div class="panel panel-default">
+	  <div class="panel-heading">List of your current projects:</div>
+		 	<div class="panel-body">
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Project name</th>
+							<th>Project description</th>
+							<th>Project category</th>
+							<th>Created At</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each project}}
+						<tr>
+							<td><a href="/projects/{{_id}}">{{pname}}</a> [<a href="#" class="js-delete-project">Delete</a>] </td>
+							<td>{{pdescription}} </td>
+							<td>{{pcategory}} </td>
+							<td>{{createdAt}}</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div><!--/panel-body-->
+		
+	</div><!--/panel-->
 </template>

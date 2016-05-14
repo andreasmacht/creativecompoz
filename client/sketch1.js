@@ -31,6 +31,8 @@ sketch1 = function(s){
 
   s.mousePressed = function() {
     // use the '.enabled' boolean to make sure user enabled the mic (otherwise we'd record silence)
+    //warum rendered mousepressed im body und nicht in div canvas???
+    console.log("mousePressed ENTERED");
     if (state === 0 && mic.enabled) {
 
       // Tell recorder to record to a p5.SoundFile which we will use for playback
