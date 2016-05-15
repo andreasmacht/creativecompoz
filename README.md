@@ -1,6 +1,7 @@
 ### CreativeCompoz - a real-time collaborative creative composition app
 
 # About this application:
+
 Creative Compoz is a real-time collaborative app that allows creative content
 creation. It has been designed for creative people who are looking for a
 tool that enables them to collaboratively work in teams - independent from
