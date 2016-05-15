@@ -54,6 +54,9 @@ Template.projectPage.events({
     			console.log(err.reason);
     		}
     	});
+        var docTitle = $('[name=documentTitle]').val("");
+        var docAbout = $('[name=documentAbout]').val("");
+        var docCat = $('[name=documentCategory]').val("");
 
     },
     "click .js-delete-document":function(event){

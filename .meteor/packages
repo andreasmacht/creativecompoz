@@ -22,5 +22,4 @@ twbs:bootstrap
 accounts-password
 iron:router
 mizzao:sharejs
-universe:audio-recorder
 themeteorchef:jquery-validation
